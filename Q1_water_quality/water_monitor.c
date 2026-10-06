@@ -1,15 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h> // Since the temperature Deviation is the absolute value of (Temperature - 25) we need to use the abs() function and stdlib is required for that
 
-int main() {
-    
-    int temperature; 
-    int turbidity; 
-
-    printf("Please enter the water temperature (in Celsius): ");
-    scanf("%d", &temperature);
-    printf("Please enter the water turbidity (in NTU): ");
-    scanf("%d", &turbidity);
-    int water_quality_index = 100 - (temperature + turbidity);
-    printf("Water Quality Index: %d\n", water_quality_index);
-    return 0;
-}
+// Function to calculate the water quality index
+int calculate_index(int temp, int turb) {
+    int temp_deviation = abs(temp - 25);
+    int turb_penalty = turb / 2;
+    return 100 - (temp_deviation + turb_penalty);
