@@ -1,22 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h> /* Required for the abs() function */
 
-/* Calculates the water-quality index from the two sensor readings */
-int calculate_index(int temperature, int turbidity)
+/* Find how much the temperature differ from 25 C. 
+   We make sure it stay positive. */
+float get_temp_deviation(float temperature)
 {
-    int deviation = abs(temperature - 25);
-    int penalty = turbidity / 2;
-    return 100 - (deviation + penalty);
+    float deviation = temperature - 25.0;
+    if (deviation < 0)
+    {
+        deviation = -deviation;
+    }
+    return deviation;
 }
 
-/* Prints Good, Warning or Critical depending on the index */
-void print_status(int index)
+/* Calculate final water quality index using the formula */
+float get_quality_index(float temperature, float turbidity)
 {
-    if (index >= 80)
+    float deviation = get_temp_deviation(temperature);
+    float penalty = turbidity / 2.0;
+    return 100.0 - (deviation + penalty);
+}
+
+/* Check the index score to print the correct water status */
+void print_status(float index)
+{
+    if (index >= 80.0)
     {
         printf("Status: Good\n");
     }
-    else if (index >= 60)
+    else if (index >= 60.0)
     {
         printf("Status: Warning\n");
     }
@@ -28,26 +39,26 @@ void print_status(int index)
 
 int main(void)
 {
-    int temperature;
-    int turbidity;
-    int index;
+    float temperature;
+    float turbidity;
+    float index;
 
-    /* Read the two sensor values */
-    printf("Enter temperature (C): ");
-    scanf("%d", &temperature);
-    printf("Enter turbidity (NTU): ");
-    scanf("%d", &turbidity);
-
-    /* Calculate the index using our custom function */
-    index = calculate_index(temperature, turbidity);
-
-    /* Print the formatted report */
-    printf("\n===== WATER QUALITY REPORT =====\n");
-    printf("Temperature   : %d C\n", temperature);
-    printf("Turbidity     : %d NTU\n", turbidity);
-    printf("Quality index : %d\n", index);
+    /* Ask the user to enter the sensor informations */
+    printf("Please enter the water temperature (in Celsius): ");
+    scanf("%f", &temperature);
     
-    /* Call the status function */
+    printf("Please enter the water turbidity (in NTU): ");
+    scanf("%f", &turbidity);
+
+    /* Get the calculated index */
+    index = get_quality_index(temperature, turbidity);
+
+    /* Print out the final report format */
+    printf("\n===== WATER QUALITY REPORT =====\n");
+    printf("Temperature: %.2f C\n", temperature);
+    printf("Turbidity: %.2f NTU\n", turbidity);
+    printf("Quality Index: %.2f\n", index);
+    
     print_status(index);
     printf("================================\n");
 
