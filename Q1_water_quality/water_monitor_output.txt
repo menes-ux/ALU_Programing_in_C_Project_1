@@ -1,0 +1,12 @@
+menesadissolinux@menes-ax:/mnt/c/Users/menes/OneDrive/Passwords/Dev docs + projects/Alu coursework/Programming in C/ALU_Programing_in_C_Project_1/Q1_water_quality$ gcc water_monitor.c -o water_monitor_output
+menesadissolinux@menes-ax:/mnt/c/Users/menes/OneDrive/Passwords/Dev docs + projects/Alu coursework/Programming in C/ALU_Programing_in_C_Project_1/Q1_water_quality$ ./water_monitor_output 
+Please enter the water temperature (in Celsius): 30.4
+Please enter the water turbidity (in NTU): 15
+
+===== WATER QUALITY REPORT =====
+Temperature: 30.40 C
+Turbidity: 15.00 NTU
+Quality Index: 87.10
+Status: Good
+================================
+menesadissolinux@menes-ax:/mnt/c/Users/menes/OneDrive/Passwords/Dev docs + projects/Alu coursework/Programming in C/ALU_Programing_in_C_Project_1/Q1_water_quality$
