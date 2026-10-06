@@ -25,3 +25,31 @@ void print_status(int index)
         printf("Status: Critical\n");
     }
 }
+
+int main(void)
+{
+    int temperature;
+    int turbidity;
+    int index;
+
+    /* Read the two sensor values */
+    printf("Enter temperature (C): ");
+    scanf("%d", &temperature);
+    printf("Enter turbidity (NTU): ");
+    scanf("%d", &turbidity);
+
+    /* Calculate the index using our custom function */
+    index = calculate_index(temperature, turbidity);
+
+    /* Print the formatted report */
+    printf("\n===== WATER QUALITY REPORT =====\n");
+    printf("Temperature   : %d C\n", temperature);
+    printf("Turbidity     : %d NTU\n", turbidity);
+    printf("Quality index : %d\n", index);
+    
+    /* Call the status function */
+    print_status(index);
+    printf("================================\n");
+
+    return 0;
+}
