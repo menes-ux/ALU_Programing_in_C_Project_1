@@ -1,28 +1,24 @@
 #include <stdio.h>
 
-/* Function to print the menu so main stay clean */
-void print_menu(void)
+/* Discards leftover characters in the input buffer (up to the newline) */
+void clearInput(void)
 {
-    printf("\n===== MOBILE MONEY TRANSACTION SYSTEM =====\n");
-    printf("1. Deposit\n");
-    printf("2. Withdraw\n");
-    printf("3. Check Balance\n");
-    printf("4. Transaction Summary\n");
-    printf("5. Exit\n");
-    printf("Enter choice: ");
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF)
+    {
+        /* keep discarding */
+    }
 }
 
 int main(void)
 {
-    /* Variables to track the account and transactions */
-    int balance = 0;
-    int choice = 0;
-    int amount = 0;
-    int deposit_count = 0;
-    int withdraw_count = 0;
+    long balance = 0;       /* current balance in RWF */
+    long amount;            /* amount entered for a transaction */
+    int deposits = 0;       /* number of successful deposits */
+    int withdrawals = 0;    /* number of successful withdrawals */
+    int choice;             /* menu choice */
+    int status;             /* result of scanf */
 
-    /* Just testing the menu display for now */
-    print_menu();
 
     return 0;
 }
