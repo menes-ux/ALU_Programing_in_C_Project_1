@@ -9,8 +9,10 @@ void clearInput(void)
     }
 }
 
-/* Keeps asking until an integer between min and max is entered.
-   Returns 1 on success, 0 if the input stream ends. */
+/* Keep asking until the user enter a valid integer between min and max.
+   I use a pointer (*value) here so the function can update the original 
+   variable directly in memory, just like scanf do. 
+   Return 1 on success, 0 if the input stream end. */
 int readInt(const char *prompt, int min, int max, int *value)
 {
     int status;
