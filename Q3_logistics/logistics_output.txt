@@ -1,0 +1,18 @@
+$ gcc logistics.c
+$ ./a.out
+Number of routes (1-100): 6
+Route 1 - Distance in km (0-1000000): 12
+Route 2 - Distance in km (0-1000000): 25
+Route 3 - Distance in km (0-1000000): 18
+Route 4 - Distance in km (0-1000000): 40
+Route 5 - Distance in km (0-1000000): 15
+Route 6 - Distance in km (0-1000000): 30
+Distance limit in km (0-1000000): 20
+
+===== DELIVERY DISTANCE ANALYSIS =====
+Total distance: 140 km
+Average distance: 23.33 km
+Longest route: 40 km
+Routes above 20 km: 3
+Recursive sum: 140 km
+Routes above 40 km: 0
