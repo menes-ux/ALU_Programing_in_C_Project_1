@@ -1,0 +1,51 @@
+$ gcc mobile_money.c 
+$ ./a.out 
+
+===== MOBILE MONEY TRANSACTION SYSTEM =====
+1. Deposit
+2. Withdraw
+3. Check Balance
+4. Transaction Summary
+5. Exit
+Enter choice: 1
+Enter deposit amount: 2000
+Deposit successful.
+Current balance: 2000 RWF
+
+===== MOBILE MONEY TRANSACTION SYSTEM =====
+1. Deposit
+2. Withdraw
+3. Check Balance
+4. Transaction Summary
+5. Exit
+Enter choice: 2
+Enter withdrawal amount: 10000
+Transaction rejected: Insufficient balance.
+
+===== MOBILE MONEY TRANSACTION SYSTEM =====
+1. Deposit
+2. Withdraw
+3. Check Balance
+4. Transaction Summary
+5. Exit
+Enter choice: 3
+Current balance: 2000 RWF
+
+===== MOBILE MONEY TRANSACTION SYSTEM =====
+1. Deposit
+2. Withdraw
+3. Check Balance
+4. Transaction Summary
+5. Exit
+Enter choice: 4
+Successful deposits   : 1
+Successful withdrawals: 0
+
+===== MOBILE MONEY TRANSACTION SYSTEM =====
+1. Deposit
+2. Withdraw
+3. Check Balance
+4. Transaction Summary
+5. Exit
+Enter choice: 5
+System terminated.
